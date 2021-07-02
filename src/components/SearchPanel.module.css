@@ -1,0 +1,13 @@
+.panel {
+  padding: 20px;
+}
+
+.panel__input {
+  width: 80%;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.panel__btn {
+  height: 30px;
+}
