@@ -17,8 +17,12 @@ function SearchPanel({getMovies}) {
           ref={input}
           className={styles.panel__input}
           type="text"
+          name="input"
+          placeholder="Введите название фильма"
+          required
+          aria-label="Введите название фильма"
         />
-        <button className={styles.panel__btn} type="submit">Search</button>
+        <button className={styles.panel__btn} type="submit">Найти</button>
       </form>
     </div>
   );
