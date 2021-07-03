@@ -7,7 +7,7 @@ function SearchPanel({getMovies}) {
   function handleSubmit(e) {
     // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
-    getMovies(input.current.value);
+    getMovies(input.current.value, input);
   }
 
   return (
