@@ -1,7 +1,7 @@
 import {convertSearchString} from "../utils/utils";
 
 export class Api {
-  static url = 'http://www.omdbapi.com/?apikey=b838ece8';
+  static url = 'https://www.omdbapi.com/?apikey=b838ece8';
 
   static checkResponse(res) {
     if (res.ok) {
