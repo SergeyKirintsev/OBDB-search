@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 
 function App() {
   const [movies, setMovies] = useState([]);
+  const [movieInfo, setMovieInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
   function getMovies(movie) {
@@ -22,6 +23,11 @@ function App() {
   function handleShowMore(film) {
     console.log('handleShowMore');
     console.log(film);
+    Api.getInfoByID(film.imdbID)
+      .then((info) => {
+        setMovieInfo(info);
+      })
+      .catch(err => console.log('handleShowMore', err));
   }
 
   return (

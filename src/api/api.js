@@ -1,15 +1,22 @@
 import {convertSearchString} from "../utils/utils";
 
 export class Api {
+  static url = 'http://www.omdbapi.com/?apikey=b838ece8';
+
+  static checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Ошибка ${res.status}`);
+  }
+
   static getMovies(searchString) {
-    const url = 'http://www.omdbapi.com/?i=tt3896198&apikey=b838ece8';
     const search = convertSearchString(searchString)
 
-    return fetch(`${url}&s=${search}`).then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      return Promise.reject(`Ошибка ${res.status}`);
-    })
+    return fetch(`${this.url}&s=${search}`).then(this.checkResponse)
+  }
+
+  static getInfoByID(id) {
+    return fetch(`${this.url}&i=${id}&plot=full`).then(this.checkResponse)
   }
 }
