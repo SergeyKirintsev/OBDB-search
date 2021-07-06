@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 import FilmPopup from "./FilmPopup";
 
 function App() {
+  console.log(process.env);
   const [movies, setMovies] = useState([]);
   const [movieInfo, setMovieInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
